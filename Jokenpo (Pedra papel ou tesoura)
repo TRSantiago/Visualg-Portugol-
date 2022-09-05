@@ -1,0 +1,118 @@
+algoritmo "Pedra, papel ou tesoura."
+var
+   pc1, p: real
+   continue, c2, c3: logico
+   c1: caractere
+
+inicio
+
+   continue <- VERDADEIRO
+
+   enquanto continue = VERDADEIRO faca
+      c2 <- VERDADEIRO
+      c3 <- verdadeiro
+      enquanto (c3 = verdadeiro) faca
+
+         escreval("==========PEDRA, PAPEL OU TESOURA==========")
+         escreval("PEDRA[1]")
+         escreval("PAPEL[2]")
+         escreval("TESOURA[3]")
+         escreval("==========PEDRA, PAPEL OU TESOURA==========")
+         escreva("Escolha: ")
+         leia (p)
+
+         limpatela
+
+         pc1 <- randi(3)+1
+
+
+
+         se (p=1) entao
+            escreval("Você escolheu pedra!")
+            c3 <- falso
+         senao
+
+            se(p=2) entao
+               c3 <- falso
+               escreval("Você escolheu papel!")
+            senao
+
+               se (p=3) entao
+                  c3 <- falso
+                  escreval("Você escolheu tesoura!")
+               senao
+                  limpatela
+                  c3 <- verdadeiro
+                  escreval("Operação inválida")
+                  escreval(" ")
+
+               fimse
+            fimse
+         fimse
+      fimenquanto
+
+
+
+
+      //===============================================
+
+      se (pc1=1) entao
+         escreval("O computador jogou pedra!")
+      senao
+
+         se(pc1=2) entao
+            escreval("O computador jogou papel!")
+         senao
+
+            se (pc1=3) entao
+               escreval("O computador jogou tesoura!")
+            fimse
+         fimse
+      fimse
+
+      //===============================================
+
+      se (pc1 = 1) e (p = 2) ou (pc1 = 2) e (p = 3) ou (pc1 = 3) e (p =  1) entao
+         escreval (" ")
+         escreval ("Parabéns! ")
+         escreval ("Você ganhou! =D ")
+      fimse
+
+      se (pc1 = 1) e (p = 1) ou (pc1 = 2) e (p = 2) ou (pc1 = 3) e (p = 3) entao
+         escreval (" ")
+         escreval ("Houve empate! '-' ")
+      fimse
+
+      se (pc1 = 1) e (p = 3) ou (pc1 = 2) e (p = 1) ou (pc1 = 3) e (p = 2) entao
+         escreval(" ")
+         escreval("Você perdeu! =(")
+      fimse
+
+
+      enquanto (c2 = VERDADEIRO) faca
+         escreval(" ")
+         escreval("Deseja continuar: [Sim] [Não]")
+         leia (c1)
+         se (c1 = "Não") ou (c1= "Nao") ou (c1= "NAO)") ou (c1 = "N") ou (c1 = "n") ou (c1 = "NÃO") ou (c1 = "nao") entao
+            continue <- FALSO
+            c2 <- FALSO
+
+         senao
+            se (c1 = "Sim") ou (c1 = "SIM") ou (c1 = "S") ou (c1 = "s") ou (c1 = "sim") entao
+               continue <- VERDADEIRO
+               c2 <- FALSO
+            senao
+               c2<- VERDADEIRO
+               limpatela
+               escreval ("Operação inválida")
+
+
+
+            fimse
+         fimse
+
+      fimenquanto
+      limpatela
+   fimenquanto
+
+fimalgoritmo
