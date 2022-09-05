@@ -1,0 +1,79 @@
+algoritmo "Adivinhe o número"
+var
+   n1, n2, n3, n4, n:inteiro
+   r, r3: logico
+   r1: caractere
+
+inicio
+   r <- verdadeiro
+   enquanto (r= verdadeiro) faca
+
+      n <- randi (10)+1
+      escreval("==========================================")
+      escreval("O computador pensou em um número de 1 a 10")
+      escreval("      VOCÊ CONSEGUE ADIVINHAR QUAL?       ")
+      escreval("              (4 chances)                 ")
+      escreval("==========================================")
+      
+      escreval(" ")
+      escreva("R:")
+      leia (n1)
+      escreva("R:")
+      leia (n2)
+      escreva("R:")
+      leia (n3)
+      escreva("R:")
+      leia (n4)
+      limpatela
+
+      se (n = n1) ou (n = n2) ou (n = n3) ou (n = n4) entao
+         escreval("  ==================================================== ")
+         escreval("                  PARABÉNS, VOCÊ ACERTOU!")
+         escreval("         O número escolhido pelo computador foi: ",n)
+         escreval("  ====================================================")
+      senao
+         se (n < 0) ou (n>10) entao
+            escreval("Valor inválido")
+
+         senao
+         escreval   ("  ==================================================== ")
+            escreval("                     ERROOOOOOOU")
+            escreval("      O número escolhido pelo computador foi: ",n)
+            escreval("  ====================================================")
+         fimse
+      fimse
+
+
+      r3 <-verdadeiro
+
+      enquanto (r3 = verdadeiro) faca
+      escreval(" ")
+      escreval("Deseja continuar? [Sim] [Não]")
+      escreva("R:")
+      leia (r1)
+      se (r1 = "Não") ou (r1="nao") ou (r1="n") ou (r1="NAO") ou (r1="N") entao
+         r3<-falso
+         r<- falso
+      senao
+           se (r1= "S") ou (r1= "s") ou (r1= "Sim") ou (r1= "sim") ou (r1="SIM") entao
+           r<- verdadeiro
+           limpatela
+           r3<-falso
+               senao
+               limpatela
+               r3 <-verdadeiro
+               escreval("  ====================================================")
+               escreval("Operação inválida ")
+               escreval("  ====================================================")
+               r<- verdadeiro
+
+               fimse
+
+           fimse
+              fimenquanto
+
+
+   fimenquanto
+
+
+fimalgoritmo
